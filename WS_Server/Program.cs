@@ -1,11 +1,8 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using WS_Server.Core.Models;
+using WS_Server.Data;
+using WS_Server.Services;
 
 namespace WS_Server
 {
@@ -13,21 +10,40 @@ namespace WS_Server
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var app = CreateWebApplication(args);
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
+
+            app.UseCors(config => config
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin());
+
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
+
+            app.Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.ConfigureLogging(logging =>
-                    {
-                        /* loggerFactory.AddFile("Logs/app-{Date}.txt");*/
-                        //Тоже самое что и в appsettings json
-                        /*logging.AddFilter("Microsoft.AspNetCore.SignalR", LogLevel.Debug);*/
-                        /*logging.AddFilter("Microsoft.AspNetCore.Http.Connections", LogLevel.Debug);*/
-                    });
-                    webBuilder.UseStartup<Startup>();
-                });
+        public static WebApplication CreateWebApplication(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddRazorPages();
+            builder.Services.AddSignalR();
+            builder.Services.AddCors();
+
+            builder.Services.AddScoped<DbContext>();
+            builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<ForecastQuery>();
+
+            return builder.Build();
+        }
     }
 }

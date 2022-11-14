@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\WS_Server.csproj": {}
+    "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\WS_Server.csproj": {}
   },
   "projects": {
-    "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\WS_Server.csproj": {
+    "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\WS_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\WS_Server.csproj",
+        "projectUniqueName": "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\WS_Server.csproj",
         "projectName": "WS_Server",
-        "projectPath": "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\WS_Server.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\obj\\",
+        "projectPath": "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\WS_Server.csproj",
+        "packagesPath": "C:\\Users\\neoql\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\neoql\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://crm-unix-01.picompany.ru/nuget/v3/index.json": {},
+          "https://git.pik.ru/api/v4/projects/1340/packages/nuget/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -44,6 +47,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
             "Lextm.SharpSnmpLib": {
               "target": "Package",
               "version": "[12.4.0, )"
@@ -88,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

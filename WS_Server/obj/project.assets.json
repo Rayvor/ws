@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Dapper/2.0.123": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Lextm.SharpSnmpLib/12.4.0": {
         "type": "package",
         "compile": {
@@ -889,6 +902,24 @@
     }
   },
   "libraries": {
+    "Dapper/2.0.123": {
+      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "type": "package",
+      "path": "dapper/2.0.123",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.123.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
     "Lextm.SharpSnmpLib/12.4.0": {
       "sha512": "H1PxKIb8EvHbETmBv3GkyYKAPN5/9Ez9VzgjzZfhoc+B9qHB2/uhxZPUGCo1tbwcNZvYgvE141GnGlXwpOLoFw==",
       "type": "package",
@@ -3380,6 +3411,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Dapper >= 2.0.123",
       "Lextm.SharpSnmpLib >= 12.4.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.0",
       "MySqlConnector >= 2.1.13",
@@ -3389,23 +3421,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Users\\neoql\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\WS_Server.csproj",
+      "projectUniqueName": "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\WS_Server.csproj",
       "projectName": "WS_Server",
-      "projectPath": "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\WS_Server.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\data\\C#\\WPF\\Fluessonic\\WS_Server\\obj\\",
+      "projectPath": "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\WS_Server.csproj",
+      "packagesPath": "C:\\Users\\neoql\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\neoql\\source\\repos\\ws\\WS_Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\neoql\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3414,7 +3446,10 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://crm-unix-01.picompany.ru/nuget/v3/index.json": {},
+        "https://git.pik.ru/api/v4/projects/1340/packages/nuget/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -3432,6 +3467,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.0.123, )"
+          },
           "Lextm.SharpSnmpLib": {
             "target": "Package",
             "version": "[12.4.0, )"
@@ -3476,7 +3515,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
