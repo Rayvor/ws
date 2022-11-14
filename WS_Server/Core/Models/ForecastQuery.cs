@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using WS_Server.Services;
 
@@ -20,6 +21,14 @@ namespace WS_Server.Core.Models
         public string Name { get; set; }
 
         [FromQuery]
-        public string Token { get => _token; set => _tokenConverterService.Convert(Cams, Name, value); }
+        public string Token 
+        { 
+            get => _token;
+            set
+            {
+                _token = value;
+                _tokenConverterService.Convert(Cams, Name, value);
+            }
+        }
     }
 }
